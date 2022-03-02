@@ -39,7 +39,8 @@ func (svc *Service) Init() (err error) {
 	return svc.Create(&interfaces.UserCreateOptions{
 		Username: constants.DefaultAdminUsername,
 		Password: constants.DefaultAdminPassword,
-		Role:     constants.RoleAdmin,
+		Role:     constants.RootRole,
+		Name:     constants.Name,
 	})
 }
 
@@ -79,7 +80,7 @@ func (svc *Service) Create(opts *interfaces.UserCreateOptions, args ...interface
 			Username: opts.Username,
 			Role:     opts.Role,
 			Email:    opts.Email,
-			// Name:     opts.Name,
+			Name:     opts.Name,
 		}
 		if err := delegate.NewModelDelegate(u, actor).Add(); err != nil {
 			return err

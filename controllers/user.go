@@ -9,7 +9,6 @@ import (
 	"github.com/crawlab-team/crawlab-core/entity"
 	"github.com/crawlab-team/crawlab-core/errors"
 	"github.com/crawlab-team/crawlab-core/interfaces"
-	delegate2 "github.com/crawlab-team/crawlab-core/models/delegate"
 	"github.com/crawlab-team/crawlab-core/models/models"
 	"github.com/crawlab-team/crawlab-core/models/service"
 	"github.com/crawlab-team/crawlab-core/user"
@@ -36,11 +35,6 @@ func getUserActions() []Action {
 			Path:        "/me",
 			HandlerFunc: userCtx.getMe,
 		},
-		{
-			Method:      http.MethodPost,
-			Path:        "/changeme/:id",
-			HandlerFunc: userCtx.postMe,
-		},
 	}
 }
 
@@ -51,35 +45,6 @@ func (ctx *userContext) getMe(c *gin.Context) {
 		return
 	}
 	HandleSuccessWithData(c, u)
-}
-
-func (ctx *userContext) postMe(c *gin.Context) {
-	id, err := primitive.ObjectIDFromHex(c.Param("id"))
-	if err != nil {
-		HandleErrorBadRequest(c, err)
-		return
-	}
-	res, _ := c.Get(constants.ContextUser)
-	currentuser, _ := res.(interfaces.User)
-	if currentuser.GetId() != id && currentuser.GetRole() != "root" {
-		HandleErrorUnauthorized(c, errors.ErrorHttpUnauthorized)
-		return
-	}
-
-	// payload
-	doc, err := NewJsonBinder(ControllerIdUser).Bind(c)
-	if err != nil {
-		HandleErrorBadRequest(c, err)
-		return
-	}
-
-	// save to db
-	if err := delegate2.NewModelDelegate(doc, GetUserFromContext(c)).Save(); err != nil {
-		HandleErrorInternalServerError(c, err)
-		return
-	}
-
-	HandleSuccessWithData(c, doc)
 }
 
 func (ctx *userContext) _getMe(c *gin.Context) (u interfaces.User, err error) {
@@ -110,11 +75,12 @@ func (ctr *userController) Put(c *gin.Context) {
 		return
 	}
 
-	res, _ := c.Get(constants.ContextUser)
-	currentuser, _ := res.(interfaces.User)
-
-	if err := c.ShouldBindJSON(&currentuser); currentuser.GetRole() != "root" {
-		HandleErrorUnauthorized(c, err)
+	// // Check root user by zhizhong
+	tokenStr := c.GetHeader("Authorization")
+	userSvc, _ := user.GetUserService()
+	u_info, _ := userSvc.CheckToken(tokenStr)
+	if u_info.GetRole() != "root" {
+		HandleErrorUnauthorized(c, errors.ErrorHttpUnauthorized)
 		return
 	}
 
@@ -130,7 +96,7 @@ func (ctr *userController) Put(c *gin.Context) {
 	HandleSuccess(c)
 }
 
-func (ctr *userController) PostList(c *gin.Context) {
+func (ctr *userController) PostList(c *gin.Context) { // change user's info
 	// payload
 	var payload entity.BatchRequestPayloadWithStringData
 	if err := c.ShouldBindJSON(&payload); err != nil {
@@ -138,11 +104,21 @@ func (ctr *userController) PostList(c *gin.Context) {
 		return
 	}
 
-	// // check permission
+	// check permission
+	tokenStr := c.GetHeader("Authorization")
+	userSvc, _ := user.GetUserService()
+	u, _ := userSvc.CheckToken(tokenStr)
+	if u.GetRole() != "admin" && u.GetRole() != "root" {
+		HandleErrorUnauthorized(c, errors.ErrorUserUnauthorized)
+		return
+	}
+	// check whether its change root info
+	// id, err := primitive.ObjectIDFromHex(c.Param("id"))
 	// res, _ := c.Get(constants.ContextUser)
 	// currentuser, _ := res.(interfaces.User)
-	// if currentuser.GetRole() != "root" {
-	// 	HandleErrorUnauthorized(c, errors.ErrorUserUnauthorized)
+	// u, ok = res.(interfaces.User)
+	// if err != nil {
+	// 	HandleErrorBadRequest(c, err)
 	// 	return
 	// }
 
@@ -178,7 +154,7 @@ func (ctr *userController) PostList(c *gin.Context) {
 	HandleSuccess(c)
 }
 
-func (ctr *userController) PutList(c *gin.Context) {
+func (ctr *userController) PutList(c *gin.Context) { //add new users
 	// users
 	var users []models.User
 	if err := c.ShouldBindJSON(&users); err != nil {
@@ -186,11 +162,13 @@ func (ctr *userController) PutList(c *gin.Context) {
 		return
 	}
 
-	// check permission
-	res, _ := c.Get(constants.ContextUser)
-	currentuser, _ := res.(interfaces.User)
-	if currentuser.GetRole() != "root" {
-		HandleErrorUnauthorized(c, errors.ErrorUserUnauthorized)
+	// // Check root user by zhizhong
+	tokenStr := c.GetHeader("Authorization")
+	userSvc, _ := user.GetUserService()
+	u, _ := userSvc.CheckToken(tokenStr)
+
+	if u.GetRole() != "root" {
+		HandleErrorUnauthorized(c, errors.ErrorHttpUnauthorized)
 		return
 	}
 
@@ -221,17 +199,32 @@ func (ctx *userContext) changePassword(c *gin.Context) {
 		return
 	}
 
-	// Check whether the id of the operation object is its own id
-	res, _ := c.Get(constants.ContextUser)
-	currentuser, _ := res.(interfaces.User)
-	fmt.Println(currentuser.GetId())
+	// protect root role
 	fmt.Println(id)
-	fmt.Println(currentuser.GetRole())
-	if currentuser.GetId() != id && currentuser.GetRole() != "root" {
-		fmt.Println("++++++++++++++++++")
+	aim_user, _ := ctx.modelSvc.GetUserById(id)
+	// s, _ := aim_user.(interfaces.User)
+	// aim_user, err = d.svc.modelSvc.GetUserById(id)
+	fmt.Println(aim_user)
+	// fmt.Println(s)
+	if err != nil {
+		HandleErrorBadRequest(c, err)
+		return
+	}
+
+	// // Check root user by zhizhong
+	tokenStr := c.GetHeader("Authorization")
+	userSvc, _ := user.GetUserService()
+	u, _ := userSvc.CheckToken(tokenStr)
+
+	if aim_user.GetRole() == "root" && u.GetRole() != "root" {
+		HandleErrorUnauthorized(c, errors.ErrorUserUnauthorized)
+		return
+	}
+	if u.GetId() != id && u.GetRole() != "admin" && u.GetRole() != "root" {
 		HandleErrorUnauthorized(c, errors.ErrorHttpUnauthorized)
 		return
 	}
+
 	var payload map[string]string
 	if err := c.ShouldBindJSON(&payload); err != nil {
 		HandleErrorBadRequest(c, err)

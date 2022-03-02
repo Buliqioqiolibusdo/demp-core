@@ -3,10 +3,10 @@ package controllers
 import (
 	"reflect"
 
-	"github.com/crawlab-team/crawlab-core/constants"
 	"github.com/crawlab-team/crawlab-core/errors"
 	"github.com/crawlab-team/crawlab-core/interfaces"
 	"github.com/crawlab-team/crawlab-core/models/delegate"
+	"github.com/crawlab-team/crawlab-core/user"
 	"github.com/crawlab-team/crawlab-core/utils"
 	"github.com/crawlab-team/crawlab-db/mongo"
 	"github.com/crawlab-team/go-trace"
@@ -147,9 +147,11 @@ func (d *ListControllerDelegate) DeleteList(c *gin.Context) {
 	payload, err := NewJsonBinder(d.id).BindBatchRequestPayload(c)
 
 	// // Check root user by zhizhong
-	res, _ := c.Get(constants.ContextUser)
-	currentuser, _ := res.(interfaces.User)
-	if currentuser.GetRole() != "root" {
+	tokenStr := c.GetHeader("Authorization")
+	userSvc, _ := user.GetUserService()
+	u, _ := userSvc.CheckToken(tokenStr)
+
+	if u.GetRole() != "root" {
 		HandleErrorUnauthorized(c, errors.ErrorHttpUnauthorized)
 		return
 	}

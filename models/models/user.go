@@ -10,7 +10,7 @@ type User struct {
 	Password string             `json:"password,omitempty" bson:"-"`
 	Role     string             `json:"role" bson:"role"`
 	Email    string             `json:"email" bson:"email"`
-	// Name     string             `json:"name" bson:"name"`
+	Name     string             `json:"name" bson:"name"`
 	//Setting  UserSetting        `json:"setting" bson:"setting"`
 }
 

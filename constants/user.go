@@ -1,6 +1,7 @@
 package constants
 
 const (
+	RootRole   = "root"
 	RoleAdmin  = "admin"
 	RoleNormal = "normal"
 )
@@ -12,4 +13,8 @@ const (
 
 const (
 	UserContextKey = "user"
+)
+
+const (
+	Name = "超级管理猿"
 )

@@ -5,6 +5,7 @@ type UserCreateOptions struct {
 	Password string
 	Email    string
 	Role     string
+	Name     string
 }
 
 type UserLoginOptions struct {
