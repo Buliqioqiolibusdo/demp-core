@@ -1,9 +1,10 @@
 package delegate
 
 import (
-	"github.com/crawlab-team/crawlab-core/constants"
-	"github.com/crawlab-team/crawlab-core/interfaces"
 	"time"
+
+	"github.com/buliqioqiolibusdo/demp-core/constants"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
 )
 
 type ModelNodeDelegate struct {

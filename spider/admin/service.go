@@ -1,13 +1,13 @@
 package admin
 
 import (
-	config2 "github.com/crawlab-team/crawlab-core/config"
-	"github.com/crawlab-team/crawlab-core/constants"
-	"github.com/crawlab-team/crawlab-core/interfaces"
-	"github.com/crawlab-team/crawlab-core/models/models"
-	"github.com/crawlab-team/crawlab-core/models/service"
-	"github.com/crawlab-team/crawlab-core/node/config"
-	"github.com/crawlab-team/crawlab-core/task/scheduler"
+	config2 "github.com/buliqioqiolibusdo/demp-core/config"
+	"github.com/buliqioqiolibusdo/demp-core/constants"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
+	"github.com/buliqioqiolibusdo/demp-core/models/models"
+	"github.com/buliqioqiolibusdo/demp-core/models/service"
+	"github.com/buliqioqiolibusdo/demp-core/node/config"
+	"github.com/buliqioqiolibusdo/demp-core/task/scheduler"
 	"github.com/crawlab-team/go-trace"
 	"github.com/spf13/viper"
 	"go.mongodb.org/mongo-driver/bson"

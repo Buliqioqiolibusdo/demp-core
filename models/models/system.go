@@ -1,14 +1,15 @@
 package models
 
 import (
-	"github.com/apex/log"
-	"github.com/crawlab-team/crawlab-core/entity"
 	"io/ioutil"
 	"os"
 	"path/filepath"
 	"runtime"
 	"runtime/debug"
 	"strings"
+
+	"github.com/apex/log"
+	"github.com/buliqioqiolibusdo/demp-core/entity"
 )
 
 var executableNameMap = map[string]string{

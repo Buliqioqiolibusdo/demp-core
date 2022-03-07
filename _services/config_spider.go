@@ -3,10 +3,10 @@ package services
 //import (
 //	"errors"
 //	"fmt"
-//	"github.com/crawlab-team/crawlab-core/constants"
-//	"github.com/crawlab-team/crawlab-core/entity"
-//	"github.com/crawlab-team/crawlab-core/models"
-//	"github.com/crawlab-team/crawlab-core/model/config_spider"
+//	"github.com/buliqioqiolibusdo/demp-core/constants"
+//	"github.com/buliqioqiolibusdo/demp-core/entity"
+//	"github.com/buliqioqiolibusdo/demp-core/models"
+//	"github.com/buliqioqiolibusdo/demp-core/model/config_spider"
 //	"strings"
 //)
 //

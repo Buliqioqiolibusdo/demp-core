@@ -3,16 +3,17 @@ package test
 import (
 	"context"
 	"encoding/json"
-	"github.com/crawlab-team/crawlab-core/entity"
-	"github.com/crawlab-team/crawlab-core/grpc/client"
-	"github.com/crawlab-team/crawlab-core/grpc/server"
-	"github.com/crawlab-team/crawlab-core/node/config"
-	grpc "github.com/crawlab-team/crawlab-grpc"
-	"github.com/stretchr/testify/require"
 	"io/ioutil"
 	"os"
 	"path"
 	"testing"
+
+	"github.com/buliqioqiolibusdo/demp-core/entity"
+	"github.com/buliqioqiolibusdo/demp-core/grpc/client"
+	"github.com/buliqioqiolibusdo/demp-core/grpc/server"
+	"github.com/buliqioqiolibusdo/demp-core/node/config"
+	grpc "github.com/crawlab-team/crawlab-grpc"
+	"github.com/stretchr/testify/require"
 )
 
 func TestAuthToken(t *testing.T) {

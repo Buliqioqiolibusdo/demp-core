@@ -1,6 +1,6 @@
 package models
 
-import "github.com/crawlab-team/crawlab-core/interfaces"
+import "github.com/buliqioqiolibusdo/demp-core/interfaces"
 
 type modelRelation struct {
 	d       interfaces.Model

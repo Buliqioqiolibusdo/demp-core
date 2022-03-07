@@ -2,15 +2,16 @@ package test
 
 import (
 	"context"
-	"github.com/crawlab-team/crawlab-core/constants"
-	"github.com/crawlab-team/crawlab-core/controllers"
-	"github.com/crawlab-team/crawlab-core/models/delegate"
-	"github.com/crawlab-team/crawlab-core/models/models"
-	"github.com/gin-gonic/gin"
-	"github.com/stretchr/testify/require"
 	"net/http"
 	"testing"
 	"time"
+
+	"github.com/buliqioqiolibusdo/demp-core/constants"
+	"github.com/buliqioqiolibusdo/demp-core/controllers"
+	"github.com/buliqioqiolibusdo/demp-core/models/delegate"
+	"github.com/buliqioqiolibusdo/demp-core/models/models"
+	"github.com/gin-gonic/gin"
+	"github.com/stretchr/testify/require"
 )
 
 func TestPluginProxyController_Http(t *testing.T) {

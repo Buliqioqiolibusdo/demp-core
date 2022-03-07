@@ -2,13 +2,14 @@ package client
 
 import (
 	"encoding/json"
-	"github.com/crawlab-team/crawlab-core/errors"
-	"github.com/crawlab-team/crawlab-core/interfaces"
-	"github.com/crawlab-team/crawlab-core/models/models"
+	"reflect"
+
+	"github.com/buliqioqiolibusdo/demp-core/errors"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
+	"github.com/buliqioqiolibusdo/demp-core/models/models"
 	grpc "github.com/crawlab-team/crawlab-grpc"
 	"github.com/crawlab-team/go-trace"
 	"github.com/emirpasic/gods/lists/arraylist"
-	"reflect"
 )
 
 func NewListBinder(id interfaces.ModelId, res *grpc.Response) (b interfaces.GrpcModelListBinder) {

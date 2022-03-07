@@ -2,7 +2,7 @@ package delegate
 
 import (
 	"fmt"
-	"github.com/crawlab-team/crawlab-core/interfaces"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
 )
 
 func GetEventName(d *ModelDelegate, method interfaces.ModelDelegateMethod) (eventName string) {

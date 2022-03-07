@@ -1,7 +1,7 @@
 package service
 
 import (
-	"github.com/crawlab-team/crawlab-core/interfaces"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
 	"time"
 )
 

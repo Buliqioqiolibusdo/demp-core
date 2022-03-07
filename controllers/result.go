@@ -3,8 +3,8 @@ package controllers
 import (
 	"net/http"
 
-	"github.com/crawlab-team/crawlab-core/interfaces"
-	"github.com/crawlab-team/crawlab-core/result"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
+	"github.com/buliqioqiolibusdo/demp-core/result"
 	"github.com/crawlab-team/crawlab-db/mongo"
 	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/bson"

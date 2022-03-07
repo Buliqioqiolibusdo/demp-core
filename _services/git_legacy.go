@@ -1,9 +1,9 @@
 package services
 
 //import (
-//	"github.com/crawlab-team/crawlab-core/lib/cron"
-//	"github.com/crawlab-team/crawlab-core/models"
-//	"github.com/crawlab-team/crawlab-core/utils"
+//	"github.com/buliqioqiolibusdo/demp-core/lib/cron"
+//	"github.com/buliqioqiolibusdo/demp-core/models"
+//	"github.com/buliqioqiolibusdo/demp-core/utils"
 //	"io/ioutil"
 //	"net/url"
 //	"os"

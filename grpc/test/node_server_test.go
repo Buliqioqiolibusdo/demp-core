@@ -2,10 +2,10 @@ package test
 
 import (
 	"context"
-	"github.com/crawlab-team/crawlab-core/constants"
-	"github.com/crawlab-team/crawlab-core/models/delegate"
-	"github.com/crawlab-team/crawlab-core/models/models"
-	"github.com/crawlab-team/crawlab-core/node/test"
+	"github.com/buliqioqiolibusdo/demp-core/constants"
+	"github.com/buliqioqiolibusdo/demp-core/models/delegate"
+	"github.com/buliqioqiolibusdo/demp-core/models/models"
+	"github.com/buliqioqiolibusdo/demp-core/node/test"
 	grpc "github.com/crawlab-team/crawlab-grpc"
 	"github.com/stretchr/testify/require"
 	"testing"

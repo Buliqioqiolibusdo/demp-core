@@ -1,9 +1,10 @@
 package test
 
 import (
-	"github.com/crawlab-team/crawlab-core/interfaces"
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
+	"github.com/stretchr/testify/require"
 )
 
 func TestSchedulerService_Enqueue(t *testing.T) {

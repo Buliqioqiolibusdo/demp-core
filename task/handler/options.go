@@ -1,8 +1,9 @@
 package handler
 
 import (
-	"github.com/crawlab-team/crawlab-core/interfaces"
 	"time"
+
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
 )
 
 type Option func(svc interfaces.TaskHandlerService)

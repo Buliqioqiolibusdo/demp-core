@@ -1,9 +1,9 @@
 package client
 
 import (
-	config2 "github.com/crawlab-team/crawlab-core/config"
-	"github.com/crawlab-team/crawlab-core/grpc/client"
-	"github.com/crawlab-team/crawlab-core/interfaces"
+	config2 "github.com/buliqioqiolibusdo/demp-core/config"
+	"github.com/buliqioqiolibusdo/demp-core/grpc/client"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
 	"go.uber.org/dig"
 )
 

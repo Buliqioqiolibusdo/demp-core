@@ -1,8 +1,8 @@
 package service
 
 import (
-	"github.com/crawlab-team/crawlab-core/interfaces"
-	"github.com/crawlab-team/crawlab-core/models/models"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
+	"github.com/buliqioqiolibusdo/demp-core/models/models"
 	"github.com/crawlab-team/crawlab-db/mongo"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"

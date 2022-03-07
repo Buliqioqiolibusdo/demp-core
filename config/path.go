@@ -1,7 +1,7 @@
 package config
 
 import (
-	"github.com/crawlab-team/crawlab-core/interfaces"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
 	"github.com/spf13/viper"
 )
 

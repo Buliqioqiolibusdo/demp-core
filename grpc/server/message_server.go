@@ -1,15 +1,16 @@
 package server
 
 import (
-	"github.com/crawlab-team/crawlab-core/entity"
-	"github.com/crawlab-team/crawlab-core/errors"
-	"github.com/crawlab-team/crawlab-core/interfaces"
-	"github.com/crawlab-team/crawlab-core/models/service"
-	"github.com/crawlab-team/crawlab-core/node/config"
+	"io"
+
+	"github.com/buliqioqiolibusdo/demp-core/entity"
+	"github.com/buliqioqiolibusdo/demp-core/errors"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
+	"github.com/buliqioqiolibusdo/demp-core/models/service"
+	"github.com/buliqioqiolibusdo/demp-core/node/config"
 	grpc "github.com/crawlab-team/crawlab-grpc"
 	"github.com/crawlab-team/go-trace"
 	"go.uber.org/dig"
-	"io"
 )
 
 type MessageServer struct {

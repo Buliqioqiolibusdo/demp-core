@@ -2,13 +2,14 @@ package client
 
 import (
 	"encoding/json"
-	config2 "github.com/crawlab-team/crawlab-core/config"
-	"github.com/crawlab-team/crawlab-core/entity"
-	"github.com/crawlab-team/crawlab-core/errors"
-	"github.com/crawlab-team/crawlab-core/grpc/client"
-	"github.com/crawlab-team/crawlab-core/interfaces"
-	"github.com/crawlab-team/crawlab-core/models/models"
-	"github.com/crawlab-team/crawlab-core/utils"
+
+	config2 "github.com/buliqioqiolibusdo/demp-core/config"
+	"github.com/buliqioqiolibusdo/demp-core/entity"
+	"github.com/buliqioqiolibusdo/demp-core/errors"
+	"github.com/buliqioqiolibusdo/demp-core/grpc/client"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
+	"github.com/buliqioqiolibusdo/demp-core/models/models"
+	"github.com/buliqioqiolibusdo/demp-core/utils"
 	grpc "github.com/crawlab-team/crawlab-grpc"
 	"github.com/crawlab-team/go-trace"
 	"github.com/spf13/viper"

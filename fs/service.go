@@ -2,12 +2,12 @@ package fs
 
 import (
 	"fmt"
-	config2 "github.com/crawlab-team/crawlab-core/config"
-	"github.com/crawlab-team/crawlab-core/constants"
-	"github.com/crawlab-team/crawlab-core/entity"
-	"github.com/crawlab-team/crawlab-core/errors"
-	"github.com/crawlab-team/crawlab-core/interfaces"
-	"github.com/crawlab-team/crawlab-core/node/config"
+	config2 "github.com/buliqioqiolibusdo/demp-core/config"
+	"github.com/buliqioqiolibusdo/demp-core/constants"
+	"github.com/buliqioqiolibusdo/demp-core/entity"
+	"github.com/buliqioqiolibusdo/demp-core/errors"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
+	"github.com/buliqioqiolibusdo/demp-core/node/config"
 	cfs "github.com/crawlab-team/crawlab-fs"
 	vcs "github.com/crawlab-team/crawlab-vcs"
 	"github.com/crawlab-team/go-trace"

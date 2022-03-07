@@ -1,8 +1,9 @@
 package plugin
 
 import (
-	"github.com/crawlab-team/crawlab-core/config"
 	"path"
+
+	"github.com/buliqioqiolibusdo/demp-core/config"
 )
 
 const DefaultPluginFsPathBase = "plugins"

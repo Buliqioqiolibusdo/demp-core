@@ -1,9 +1,9 @@
 package test
 
 import (
-	"github.com/crawlab-team/crawlab-core/controllers"
-	"github.com/crawlab-team/crawlab-core/models/service"
-	"github.com/crawlab-team/crawlab-core/routes"
+	"github.com/buliqioqiolibusdo/demp-core/controllers"
+	"github.com/buliqioqiolibusdo/demp-core/models/service"
+	"github.com/buliqioqiolibusdo/demp-core/routes"
 	"github.com/crawlab-team/go-trace"
 	"github.com/gavv/httpexpect/v2"
 	"github.com/gin-gonic/gin"

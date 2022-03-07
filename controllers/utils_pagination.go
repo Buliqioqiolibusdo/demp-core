@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"github.com/crawlab-team/crawlab-core/constants"
-	"github.com/crawlab-team/crawlab-core/entity"
+	"github.com/buliqioqiolibusdo/demp-core/constants"
+	"github.com/buliqioqiolibusdo/demp-core/entity"
 	"github.com/gin-gonic/gin"
 )
 

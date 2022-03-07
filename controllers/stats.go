@@ -1,13 +1,14 @@
 package controllers
 
 import (
-	"github.com/crawlab-team/crawlab-core/interfaces"
-	"github.com/crawlab-team/crawlab-core/models/service"
-	"github.com/crawlab-team/crawlab-core/stats"
+	"net/http"
+
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
+	"github.com/buliqioqiolibusdo/demp-core/models/service"
+	"github.com/buliqioqiolibusdo/demp-core/stats"
 	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.uber.org/dig"
-	"net/http"
 )
 
 var StatsController ActionController

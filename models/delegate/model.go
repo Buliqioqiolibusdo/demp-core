@@ -2,19 +2,20 @@ package delegate
 
 import (
 	"encoding/json"
-	errors2 "github.com/crawlab-team/crawlab-core/errors"
-	"github.com/crawlab-team/crawlab-core/event"
-	"github.com/crawlab-team/crawlab-core/interfaces"
-	"github.com/crawlab-team/crawlab-core/models/models"
-	"github.com/crawlab-team/crawlab-core/utils"
+	"reflect"
+	"time"
+
+	errors2 "github.com/buliqioqiolibusdo/demp-core/errors"
+	"github.com/buliqioqiolibusdo/demp-core/event"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
+	"github.com/buliqioqiolibusdo/demp-core/models/models"
+	"github.com/buliqioqiolibusdo/demp-core/utils"
 	"github.com/crawlab-team/crawlab-db/errors"
 	"github.com/crawlab-team/crawlab-db/mongo"
 	"github.com/crawlab-team/go-trace"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	mongo2 "go.mongodb.org/mongo-driver/mongo"
-	"reflect"
-	"time"
 )
 
 func NewModelDelegate(doc interfaces.Model, args ...interface{}) interfaces.ModelDelegate {

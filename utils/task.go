@@ -1,6 +1,6 @@
 package utils
 
-import "github.com/crawlab-team/crawlab-core/constants"
+import "github.com/buliqioqiolibusdo/demp-core/constants"
 
 func IsCancellable(status string) bool {
 	switch status {

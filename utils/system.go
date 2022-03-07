@@ -2,14 +2,15 @@ package utils
 
 import (
 	"encoding/json"
-	"github.com/apex/log"
-	"github.com/crawlab-team/crawlab-core/constants"
-	"github.com/crawlab-team/crawlab-core/entity"
-	"github.com/spf13/viper"
 	"io/ioutil"
 	"path"
 	"runtime/debug"
 	"strings"
+
+	"github.com/apex/log"
+	"github.com/buliqioqiolibusdo/demp-core/constants"
+	"github.com/buliqioqiolibusdo/demp-core/entity"
+	"github.com/spf13/viper"
 )
 
 func GetLangList() []entity.Lang {

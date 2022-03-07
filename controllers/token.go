@@ -1,11 +1,11 @@
 package controllers
 
 import (
-	"github.com/crawlab-team/crawlab-core/interfaces"
-	"github.com/crawlab-team/crawlab-core/models/delegate"
-	"github.com/crawlab-team/crawlab-core/models/models"
-	"github.com/crawlab-team/crawlab-core/models/service"
-	"github.com/crawlab-team/crawlab-core/user"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
+	"github.com/buliqioqiolibusdo/demp-core/models/delegate"
+	"github.com/buliqioqiolibusdo/demp-core/models/models"
+	"github.com/buliqioqiolibusdo/demp-core/models/service"
+	"github.com/buliqioqiolibusdo/demp-core/user"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/dig"
 )

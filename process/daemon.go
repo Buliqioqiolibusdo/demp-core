@@ -6,9 +6,9 @@ import (
 	"time"
 
 	"github.com/apex/log"
-	"github.com/crawlab-team/crawlab-core/errors"
-	"github.com/crawlab-team/crawlab-core/interfaces"
-	"github.com/crawlab-team/crawlab-core/sys_exec"
+	"github.com/buliqioqiolibusdo/demp-core/errors"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
+	"github.com/buliqioqiolibusdo/demp-core/sys_exec"
 	"github.com/crawlab-team/go-trace"
 )
 

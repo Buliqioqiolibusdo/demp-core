@@ -3,9 +3,9 @@ package context
 import (
 	"fmt"
 	"github.com/apex/log"
-	"github.com/crawlab-team/crawlab-core/constants"
-	"github.com/crawlab-team/crawlab-core/errors"
-	models2 "github.com/crawlab-team/crawlab-core/models/models"
+	"github.com/buliqioqiolibusdo/demp-core/constants"
+	"github.com/buliqioqiolibusdo/demp-core/errors"
+	models2 "github.com/buliqioqiolibusdo/demp-core/models/models"
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
 	errors2 "github.com/pkg/errors"

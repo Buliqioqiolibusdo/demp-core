@@ -1,14 +1,16 @@
 package controllers
 
 import (
-	"github.com/crawlab-team/crawlab-core/config"
-	"github.com/crawlab-team/crawlab-core/constants"
-	"github.com/crawlab-team/crawlab-core/grpc/server"
-	"github.com/crawlab-team/crawlab-core/interfaces"
-	delegate2 "github.com/crawlab-team/crawlab-core/models/delegate"
-	"github.com/crawlab-team/crawlab-core/models/models"
-	"github.com/crawlab-team/crawlab-core/models/service"
-	"github.com/crawlab-team/crawlab-core/plugin"
+	"net/http"
+
+	"github.com/buliqioqiolibusdo/demp-core/config"
+	"github.com/buliqioqiolibusdo/demp-core/constants"
+	"github.com/buliqioqiolibusdo/demp-core/grpc/server"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
+	delegate2 "github.com/buliqioqiolibusdo/demp-core/models/delegate"
+	"github.com/buliqioqiolibusdo/demp-core/models/models"
+	"github.com/buliqioqiolibusdo/demp-core/models/service"
+	"github.com/buliqioqiolibusdo/demp-core/plugin"
 	"github.com/crawlab-team/crawlab-db/mongo"
 	grpc "github.com/crawlab-team/crawlab-grpc"
 	"github.com/crawlab-team/go-trace"
@@ -18,7 +20,6 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	mongo2 "go.mongodb.org/mongo-driver/mongo"
 	"go.uber.org/dig"
-	"net/http"
 )
 
 var PluginController *pluginController

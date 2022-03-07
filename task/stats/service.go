@@ -1,12 +1,12 @@
 package stats
 
 import (
-	config2 "github.com/crawlab-team/crawlab-core/config"
-	"github.com/crawlab-team/crawlab-core/interfaces"
-	"github.com/crawlab-team/crawlab-core/models/service"
-	"github.com/crawlab-team/crawlab-core/node/config"
-	"github.com/crawlab-team/crawlab-core/result"
-	"github.com/crawlab-team/crawlab-core/task"
+	config2 "github.com/buliqioqiolibusdo/demp-core/config"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
+	"github.com/buliqioqiolibusdo/demp-core/models/service"
+	"github.com/buliqioqiolibusdo/demp-core/node/config"
+	"github.com/buliqioqiolibusdo/demp-core/result"
+	"github.com/buliqioqiolibusdo/demp-core/task"
 	"github.com/crawlab-team/crawlab-db/mongo"
 	clog "github.com/crawlab-team/crawlab-log"
 	"github.com/crawlab-team/go-trace"

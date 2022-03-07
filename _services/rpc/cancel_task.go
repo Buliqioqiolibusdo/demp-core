@@ -3,10 +3,10 @@ package rpc
 import (
 	"errors"
 	"fmt"
-	"github.com/crawlab-team/crawlab-core/constants"
-	"github.com/crawlab-team/crawlab-core/entity"
-	"github.com/crawlab-team/crawlab-core/models"
-	"github.com/crawlab-team/crawlab-core/utils"
+	"github.com/buliqioqiolibusdo/demp-core/constants"
+	"github.com/buliqioqiolibusdo/demp-core/entity"
+	"github.com/buliqioqiolibusdo/demp-core/models"
+	"github.com/buliqioqiolibusdo/demp-core/utils"
 )
 
 type CancelTaskService struct {

@@ -1,11 +1,12 @@
 package test
 
 import (
-	"github.com/crawlab-team/crawlab-core/constants"
-	"github.com/crawlab-team/crawlab-core/interfaces"
-	"github.com/stretchr/testify/require"
 	"testing"
 	"time"
+
+	"github.com/buliqioqiolibusdo/demp-core/constants"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
+	"github.com/stretchr/testify/require"
 )
 
 func TestHandlerService_Run(t *testing.T) {

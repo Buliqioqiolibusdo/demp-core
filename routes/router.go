@@ -6,7 +6,7 @@ import (
 	"path"
 
 	"github.com/apex/log"
-	"github.com/crawlab-team/crawlab-core/controllers"
+	"github.com/buliqioqiolibusdo/demp-core/controllers"
 	"github.com/gin-gonic/gin"
 )
 

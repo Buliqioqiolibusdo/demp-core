@@ -3,19 +3,20 @@ package service
 import (
 	"context"
 	"encoding/json"
+	"time"
+
 	"github.com/apex/log"
-	config2 "github.com/crawlab-team/crawlab-core/config"
-	"github.com/crawlab-team/crawlab-core/grpc/client"
-	"github.com/crawlab-team/crawlab-core/interfaces"
-	"github.com/crawlab-team/crawlab-core/models/models"
-	"github.com/crawlab-team/crawlab-core/node/config"
-	"github.com/crawlab-team/crawlab-core/plugin"
-	"github.com/crawlab-team/crawlab-core/task/handler"
-	"github.com/crawlab-team/crawlab-core/utils"
+	config2 "github.com/buliqioqiolibusdo/demp-core/config"
+	"github.com/buliqioqiolibusdo/demp-core/grpc/client"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
+	"github.com/buliqioqiolibusdo/demp-core/models/models"
+	"github.com/buliqioqiolibusdo/demp-core/node/config"
+	"github.com/buliqioqiolibusdo/demp-core/plugin"
+	"github.com/buliqioqiolibusdo/demp-core/task/handler"
+	"github.com/buliqioqiolibusdo/demp-core/utils"
 	grpc "github.com/crawlab-team/crawlab-grpc"
 	"github.com/crawlab-team/go-trace"
 	"go.uber.org/dig"
-	"time"
 )
 
 type WorkerService struct {

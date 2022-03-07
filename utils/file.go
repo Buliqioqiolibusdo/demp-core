@@ -4,8 +4,6 @@ import (
 	"archive/zip"
 	"bufio"
 	"fmt"
-	"github.com/apex/log"
-	"github.com/crawlab-team/crawlab-core/constants"
 	"io"
 	"io/ioutil"
 	"os"
@@ -13,6 +11,9 @@ import (
 	"path/filepath"
 	"runtime/debug"
 	"strings"
+
+	"github.com/apex/log"
+	"github.com/buliqioqiolibusdo/demp-core/constants"
 )
 
 func RemoveFiles(path string) {

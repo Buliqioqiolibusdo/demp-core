@@ -1,4 +1,4 @@
-module github.com/crawlab-team/crawlab-core
+module github.com/buliqioqiolibusdo/demp-core
 
 go 1.16
 

@@ -1,9 +1,10 @@
 package controllers
 
 import (
-	"github.com/crawlab-team/crawlab-core/config"
-	"github.com/gin-gonic/gin"
 	"net/http"
+
+	"github.com/buliqioqiolibusdo/demp-core/config"
+	"github.com/gin-gonic/gin"
 )
 
 func GetVersion(c *gin.Context) {

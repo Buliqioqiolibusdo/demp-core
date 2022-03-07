@@ -1,7 +1,7 @@
 package result
 
 import (
-	"github.com/crawlab-team/crawlab-core/interfaces"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 

@@ -3,21 +3,22 @@ package controllers
 import (
 	"errors"
 	"fmt"
-	"github.com/crawlab-team/crawlab-core/config"
-	"github.com/crawlab-team/crawlab-core/constants"
-	errors2 "github.com/crawlab-team/crawlab-core/errors"
-	"github.com/crawlab-team/crawlab-core/grpc/client"
-	"github.com/crawlab-team/crawlab-core/grpc/server"
-	"github.com/crawlab-team/crawlab-core/interfaces"
-	"github.com/crawlab-team/crawlab-core/models/models"
-	"github.com/crawlab-team/crawlab-core/models/service"
+	"io/ioutil"
+	"net/http"
+	"strings"
+
+	"github.com/buliqioqiolibusdo/demp-core/config"
+	"github.com/buliqioqiolibusdo/demp-core/constants"
+	errors2 "github.com/buliqioqiolibusdo/demp-core/errors"
+	"github.com/buliqioqiolibusdo/demp-core/grpc/client"
+	"github.com/buliqioqiolibusdo/demp-core/grpc/server"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
+	"github.com/buliqioqiolibusdo/demp-core/models/models"
+	"github.com/buliqioqiolibusdo/demp-core/models/service"
 	grpc "github.com/crawlab-team/crawlab-grpc"
 	"github.com/gin-gonic/gin"
 	"github.com/imroc/req"
 	"go.uber.org/dig"
-	"io/ioutil"
-	"net/http"
-	"strings"
 )
 
 var PluginProxyController ActionController

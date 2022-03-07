@@ -3,9 +3,9 @@ package event
 import (
 	"fmt"
 	"github.com/apex/log"
-	"github.com/crawlab-team/crawlab-core/entity"
-	"github.com/crawlab-team/crawlab-core/interfaces"
-	"github.com/crawlab-team/crawlab-core/utils"
+	"github.com/buliqioqiolibusdo/demp-core/entity"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
+	"github.com/buliqioqiolibusdo/demp-core/utils"
 	"github.com/crawlab-team/go-trace"
 	"github.com/thoas/go-funk"
 	"regexp"

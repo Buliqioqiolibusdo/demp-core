@@ -1,7 +1,7 @@
 package server
 
 import (
-	"github.com/crawlab-team/crawlab-core/interfaces"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
 )
 
 type Option func(svr interfaces.GrpcServer)

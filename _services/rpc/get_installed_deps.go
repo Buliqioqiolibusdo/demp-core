@@ -2,9 +2,9 @@ package rpc
 
 import (
 	"encoding/json"
-	"github.com/crawlab-team/crawlab-core/constants"
-	"github.com/crawlab-team/crawlab-core/entity"
-	"github.com/crawlab-team/crawlab-core/utils"
+	"github.com/buliqioqiolibusdo/demp-core/constants"
+	"github.com/buliqioqiolibusdo/demp-core/entity"
+	"github.com/buliqioqiolibusdo/demp-core/utils"
 	"os/exec"
 	"regexp"
 	"runtime/debug"

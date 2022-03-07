@@ -1,12 +1,12 @@
 package test
 
 import (
-	config2 "github.com/crawlab-team/crawlab-core/config"
-	"github.com/crawlab-team/crawlab-core/entity"
-	"github.com/crawlab-team/crawlab-core/interfaces"
-	service2 "github.com/crawlab-team/crawlab-core/models/service"
-	"github.com/crawlab-team/crawlab-core/node/service"
-	"github.com/crawlab-team/crawlab-core/utils"
+	config2 "github.com/buliqioqiolibusdo/demp-core/config"
+	"github.com/buliqioqiolibusdo/demp-core/entity"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
+	service2 "github.com/buliqioqiolibusdo/demp-core/models/service"
+	"github.com/buliqioqiolibusdo/demp-core/node/service"
+	"github.com/buliqioqiolibusdo/demp-core/utils"
 	"go.uber.org/dig"
 	"io/ioutil"
 	"os"

@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"github.com/crawlab-team/crawlab-core/interfaces"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
 )
 
 func NewListPostActionControllerDelegate(id ControllerId, svc interfaces.ModelBaseService, actions []Action) (d *ListActionControllerDelegate) {

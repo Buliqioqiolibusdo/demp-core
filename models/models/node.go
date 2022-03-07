@@ -1,9 +1,10 @@
 package models
 
 import (
-	"github.com/crawlab-team/crawlab-core/interfaces"
-	"go.mongodb.org/mongo-driver/bson/primitive"
 	"time"
+
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 type Node struct {

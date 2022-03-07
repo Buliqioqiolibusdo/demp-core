@@ -1,14 +1,14 @@
 package test
 
 import (
-	"github.com/crawlab-team/crawlab-core/fs"
-	"github.com/crawlab-team/crawlab-core/interfaces"
-	"github.com/crawlab-team/crawlab-core/models/delegate"
-	"github.com/crawlab-team/crawlab-core/models/models"
-	"github.com/crawlab-team/crawlab-core/models/service"
-	ntest "github.com/crawlab-team/crawlab-core/node/test"
-	"github.com/crawlab-team/crawlab-core/spider/admin"
-	"github.com/crawlab-team/crawlab-core/spider/sync"
+	"github.com/buliqioqiolibusdo/demp-core/fs"
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
+	"github.com/buliqioqiolibusdo/demp-core/models/delegate"
+	"github.com/buliqioqiolibusdo/demp-core/models/models"
+	"github.com/buliqioqiolibusdo/demp-core/models/service"
+	ntest "github.com/buliqioqiolibusdo/demp-core/node/test"
+	"github.com/buliqioqiolibusdo/demp-core/spider/admin"
+	"github.com/buliqioqiolibusdo/demp-core/spider/sync"
 	"github.com/crawlab-team/go-trace"
 	"go.uber.org/dig"
 	"os"

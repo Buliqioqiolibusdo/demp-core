@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"github.com/crawlab-team/crawlab-core/middlewares"
+	"github.com/buliqioqiolibusdo/demp-core/middlewares"
 	"github.com/gin-gonic/gin"
 )
 

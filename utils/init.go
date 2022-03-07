@@ -1,8 +1,9 @@
 package utils
 
 import (
-	"github.com/crawlab-team/crawlab-core/interfaces"
 	"sync"
+
+	"github.com/buliqioqiolibusdo/demp-core/interfaces"
 )
 
 var moduleInitializedMap = sync.Map{}
