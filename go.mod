@@ -12,7 +12,7 @@ require (
 	github.com/crawlab-team/crawlab-vcs v0.6.0-beta.20211113.2048
 	github.com/crawlab-team/go-trace v0.1.1
 	github.com/crawlab-team/goseaweedfs v0.6.0-beta.20211101.1936
-	github.com/dgrijalva/jwt-go v3.2.0+incompatible
+	github.com/dgrijalva/jwt-go v3.2.1+incompatible
 	github.com/emirpasic/gods v1.12.0
 	github.com/fsnotify/fsnotify v1.4.9
 	github.com/gavv/httpexpect/v2 v2.2.0
