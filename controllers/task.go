@@ -183,7 +183,7 @@ func (ctx *taskContext) cancel(c *gin.Context) {
 		return
 	}
 
-	// run
+	// cancel
 	if err := ctx.schedulerSvc.Cancel(id, GetUserFromContext(c)); err != nil {
 		HandleErrorInternalServerError(c, err)
 		return

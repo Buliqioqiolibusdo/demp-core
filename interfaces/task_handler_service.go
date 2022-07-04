@@ -1,8 +1,9 @@
 package interfaces
 
 import (
-	"go.mongodb.org/mongo-driver/bson/primitive"
 	"time"
+
+	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 type TaskHandlerService interface {
@@ -29,6 +30,10 @@ type TaskHandlerService interface {
 	GetReportInterval() (interval time.Duration)
 	// SetReportInterval set report interval
 	SetReportInterval(interval time.Duration)
+	// GetCancelTimeout get report interval
+	GetCancelTimeout() (timeout time.Duration)
+	// SetCancelTimeout set report interval
+	SetCancelTimeout(timeout time.Duration)
 	// GetModelService get model service
 	GetModelService() (modelSvc GrpcClientModelService)
 	// GetModelSpiderService get model spider service
