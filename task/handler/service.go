@@ -1,6 +1,9 @@
 package handler
 
 import (
+	"sync"
+	"time"
+
 	"github.com/apex/log"
 	config2 "github.com/buliqioqiolibusdo/demp-core/config"
 	"github.com/buliqioqiolibusdo/demp-core/constants"
@@ -16,8 +19,6 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.uber.org/dig"
-	"sync"
-	"time"
 )
 
 type Service struct {
@@ -35,7 +36,7 @@ type Service struct {
 	//maxRunners        int
 	exitWatchDuration time.Duration
 	reportInterval    time.Duration
-
+	cancelTimeout     time.Duration
 	// internals variables
 	stopped   bool
 	mu        sync.Mutex
@@ -93,8 +94,6 @@ func (svc *Service) Run(taskId primitive.ObjectID) (err error) {
 		}
 		log.Infof("task[%s] finished", r.GetTaskId().Hex())
 
-		// delete runner from pool
-		svc.deleteRunner(r.GetTaskId())
 	}()
 
 	return nil
@@ -167,6 +166,14 @@ func (svc *Service) GetReportInterval() (interval time.Duration) {
 
 func (svc *Service) SetReportInterval(interval time.Duration) {
 	svc.reportInterval = interval
+}
+
+func (svc *Service) GetCancelTimeout() (timeout time.Duration) {
+	return svc.cancelTimeout
+}
+
+func (svc *Service) SetCancelTimeout(timeout time.Duration) {
+	svc.cancelTimeout = timeout
 }
 
 func (svc *Service) GetModelService() (modelSvc interfaces.GrpcClientModelService) {
@@ -243,16 +250,16 @@ func (svc *Service) getRunnerCount() (n int) {
 }
 
 func (svc *Service) getRunner(taskId primitive.ObjectID) (r interfaces.TaskRunner, err error) {
-	//r, ok := svc.runners[taskId]
+	log.Debugf("[TaskHandlerService] getRunner: taskId[%v]", taskId)
 	v, ok := svc.runners.Load(taskId)
 	if !ok {
-		return nil, errors.ErrorTaskNotExists
+		return nil, trace.TraceError(errors.ErrorTaskNotExists)
 	}
 	switch v.(type) {
 	case interfaces.TaskRunner:
 		r = v.(interfaces.TaskRunner)
 	default:
-		return nil, errors.ErrorModelInvalidType
+		return nil, trace.TraceError(errors.ErrorModelInvalidType)
 	}
 	return r, nil
 }
@@ -335,6 +342,7 @@ func NewTaskHandlerService(opts ...Option) (svc2 interfaces.TaskHandlerService, 
 		TaskBaseService:   baseSvc,
 		exitWatchDuration: 60 * time.Second,
 		reportInterval:    5 * time.Second,
+		cancelTimeout:     5 * time.Second,
 		mu:                sync.Mutex{},
 		runners:           sync.Map{},
 		syncLocks:         sync.Map{},
@@ -388,6 +396,8 @@ func NewTaskHandlerService(opts ...Option) (svc2 interfaces.TaskHandlerService, 
 		return nil, trace.TraceError(err)
 	}
 
+	log.Debugf("[NewTaskHandlerService] svc[cfgPath: %s]", svc.cfgSvc.GetConfigPath())
+
 	return svc, nil
 }
 
@@ -429,6 +439,11 @@ func ProvideGetTaskHandlerService(path string, opts ...Option) func() (svr inter
 	reportIntervalSeconds := viper.GetInt("task.handler.reportInterval")
 	if reportIntervalSeconds > 0 {
 		opts = append(opts, WithReportInterval(time.Duration(reportIntervalSeconds)*time.Second))
+	}
+	// cancel timeout
+	cancelTimeoutSeconds := viper.GetInt("task.handler.cancelTimeout")
+	if cancelTimeoutSeconds > 0 {
+		opts = append(opts, WithCancelTimeout(time.Duration(cancelTimeoutSeconds)*time.Second))
 	}
 	return func() (svr interfaces.TaskHandlerService, err error) {
 		return GetTaskHandlerService(path, opts...)
