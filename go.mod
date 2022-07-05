@@ -1,18 +1,17 @@
-module demp-core
+module github.com/buliqioqiolibusdo/demp-core
 
 go 1.16
 
 require (
 	github.com/apex/log v1.9.0
-	github.com/buliqioqiolibusdo/demp-core v1.0.2
 	github.com/cenkalti/backoff/v4 v4.1.3
 	github.com/crawlab-team/crawlab-db v0.1.3
-	github.com/crawlab-team/crawlab-fs v0.6.0-beta.20211101.1940
-	github.com/crawlab-team/crawlab-grpc v0.6.0-beta.20211219.1930
+	github.com/crawlab-team/crawlab-fs v0.1.0
+	github.com/crawlab-team/crawlab-grpc v0.1.0
 	github.com/crawlab-team/crawlab-log v0.1.0
-	github.com/crawlab-team/crawlab-vcs v0.6.0-beta.20211113.2048
+	github.com/crawlab-team/crawlab-vcs v0.1.0
 	github.com/crawlab-team/go-trace v0.1.1
-	github.com/crawlab-team/goseaweedfs v0.6.0-beta.20211101.1936
+	github.com/crawlab-team/goseaweedfs v0.2.0
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/emirpasic/gods v1.18.1
 	github.com/fsnotify/fsnotify v1.5.4
@@ -32,10 +31,15 @@ require (
 	github.com/shirou/gopsutil v3.21.11+incompatible
 	github.com/smartystreets/goconvey v1.7.2
 	github.com/spf13/viper v1.12.0
-	github.com/stretchr/testify v1.7.2
+	github.com/stretchr/testify v1.8.0
 	github.com/thoas/go-funk v0.9.2
+	github.com/tklauser/go-sysconf v0.3.10 // indirect
+	github.com/yusufpapurcu/wmi v1.2.2 // indirect
 	github.com/ztrue/tracerr v0.3.0
 	go.mongodb.org/mongo-driver v1.9.1
 	go.uber.org/dig v1.14.1
+	golang.org/x/net v0.0.0-20220630215102-69896b714898 // indirect
+	golang.org/x/sys v0.0.0-20220704084225-05e143d24a9e // indirect
+	google.golang.org/genproto v0.0.0-20220630174209-ad1d48641aa7 // indirect
 	google.golang.org/grpc v1.47.0
 )
