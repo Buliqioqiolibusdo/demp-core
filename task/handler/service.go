@@ -37,7 +37,10 @@ type Service struct {
 	exitWatchDuration time.Duration
 	reportInterval    time.Duration
 	cancelTimeout     time.Duration
+<<<<<<< HEAD
 
+=======
+>>>>>>> 62fc0f3319056a40965f943a4b758d86e7c001c3
 	// internals variables
 	stopped   bool
 	mu        sync.Mutex
