@@ -81,6 +81,9 @@ func (svc *Service) Run(taskId primitive.ObjectID) (err error) {
 
 	// create a goroutine to run task
 	go func() {
+		// delete runner from pool
+		defer svc.deleteRunner(r.GetTaskId())
+
 		// run task process (blocking)
 		// error or finish after task runner ends
 		if err := r.Run(); err != nil {
@@ -92,9 +95,6 @@ func (svc *Service) Run(taskId primitive.ObjectID) (err error) {
 			default:
 				log.Errorf("task[%s] finished with unknown error: %v", r.GetTaskId().Hex(), err)
 			}
-
-			// delete runner from pool
-			svc.deleteRunner(r.GetTaskId())
 		}
 		log.Infof("task[%s] finished", r.GetTaskId().Hex())
 	}()

@@ -273,6 +273,16 @@ func (svc *Service) Cancel(id primitive.ObjectID, args ...interface{}) (err erro
 		return nil
 	} else {
 		// send to cancel task on worker nodes
+		// t, err := svc.modelSvc.GetTaskById(id)
+		// if err != nil {
+		// 	return err
+		// }
+		// // node
+		// n, err := svc.modelSvc.GetNodeById(t.GetNodeId())
+		// if err != nil {
+		// 	return err
+		// }
+		// // attempt to cancel on worker
 		if err := svc.svr.SendStreamMessageWithData("node:"+n.GetKey(), grpc.StreamMessageCode_CANCEL_TASK, t); err != nil {
 			// cancel failed, force status being set as "cancelled"
 			t.Status = constants.TaskStatusCancelled

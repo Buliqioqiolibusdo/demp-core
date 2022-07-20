@@ -10,6 +10,11 @@ const (
 )
 
 const (
+	TaskFinish = "finish"
+	TaskCancel = "cancel"
+)
+
+const (
 	RunTypeAllNodes      = "all-nodes"
 	RunTypeRandom        = "random"
 	RunTypeSelectedNodes = "selected-nodes"

@@ -47,9 +47,6 @@ func (d *BasicControllerDelegate) Post(c *gin.Context) {
 		HandleErrorBadRequest(c, err)
 		return
 	}
-	// protect root role
-	aim_user, _ := d.svc.GetById(id)
-	s, _ := aim_user.(interfaces.User)
 	if err != nil {
 		HandleErrorBadRequest(c, err)
 		return
@@ -63,15 +60,10 @@ func (d *BasicControllerDelegate) Post(c *gin.Context) {
 		HandleErrorBadRequest(c, errors.ErrorHttpBadRequest)
 		return
 	}
-	// Check whether the id of the operation object is its own id //testing by zhizhong
+	// Check whether the id of the operation object  //testing by zhizhong
 	tokenStr := c.GetHeader("Authorization")
 	userSvc, _ := user.GetUserService()
 	u, _ := userSvc.CheckToken(tokenStr)
-	if s.GetRole() == "root" && u.GetRole() != "root" {
-		HandleErrorUnauthorized(c, errors.ErrorUserUnauthorized)
-		return
-	}
-	//fmt.Println(u.GetRole())
 	if u.GetRole() != "root" && u.GetRole() != "admin" {
 		HandleErrorUnauthorized(c, errors.ErrorUserUnauthorized)
 		return
