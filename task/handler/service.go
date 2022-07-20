@@ -1,6 +1,9 @@
 package handler
 
 import (
+	"sync"
+	"time"
+
 	"github.com/apex/log"
 	config2 "github.com/buliqioqiolibusdo/demp-core/config"
 	"github.com/buliqioqiolibusdo/demp-core/constants"
@@ -16,8 +19,6 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.uber.org/dig"
-	"sync"
-	"time"
 )
 
 type Service struct {
@@ -76,6 +77,9 @@ func (svc *Service) Run(taskId primitive.ObjectID) (err error) {
 
 	// create a goroutine to run task
 	go func() {
+		// delete runner from pool
+		defer svc.deleteRunner(r.GetTaskId())
+
 		// run task process (blocking)
 		// error or finish after task runner ends
 		if err := r.Run(); err != nil {
@@ -87,14 +91,8 @@ func (svc *Service) Run(taskId primitive.ObjectID) (err error) {
 			default:
 				log.Errorf("task[%s] finished with unknown error: %v", r.GetTaskId().Hex(), err)
 			}
-
-			// delete runner from pool
-			svc.deleteRunner(r.GetTaskId())
 		}
 		log.Infof("task[%s] finished", r.GetTaskId().Hex())
-
-		// delete runner from pool
-		svc.deleteRunner(r.GetTaskId())
 	}()
 
 	return nil

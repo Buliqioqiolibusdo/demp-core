@@ -6,6 +6,7 @@ const (
 	TaskStatusFinished  = "finished"
 	TaskStatusError     = "error"
 	TaskStatusCancelled = "cancelled"
+	TaskStatusAbnormal  = "abnormal"
 )
 
 const (

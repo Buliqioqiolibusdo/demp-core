@@ -116,7 +116,7 @@ func (ctx *taskContext) run(c *gin.Context) {
 		opts.UserId = u.GetId()
 	}
 
-	// run
+	// cancel
 	if err := ctx.adminSvc.Schedule(s.GetId(), opts); err != nil {
 		HandleErrorInternalServerError(c, err)
 		return
