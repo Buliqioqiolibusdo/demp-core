@@ -262,7 +262,6 @@ func (svc *Service) Cancel(id primitive.ObjectID, args ...interface{}) (err erro
 		if err := svc.handlerSvc.Cancel(id); err != nil {
 			// cancel failed, force status being set as "cancelled"
 			trace.PrintError(err)
-			t, err := svc.modelSvc.GetTaskById(id)
 			if err != nil {
 				return err
 			}
@@ -273,18 +272,8 @@ func (svc *Service) Cancel(id primitive.ObjectID, args ...interface{}) (err erro
 		return nil
 	} else {
 		// send to cancel task on worker nodes
-		// t, err := svc.modelSvc.GetTaskById(id)
-		// if err != nil {
-		// 	return err
-		// }
-		// // node
-		// n, err := svc.modelSvc.GetNodeById(t.GetNodeId())
-		// if err != nil {
-		// 	return err
-		// }
-		// // attempt to cancel on worker
 		if err := svc.svr.SendStreamMessageWithData("node:"+n.GetKey(), grpc.StreamMessageCode_CANCEL_TASK, t); err != nil {
-			// cancel failed, force status being set as "cancelled"
+			// cancel failed, force to set status as "cancelled"
 			t.Status = constants.TaskStatusCancelled
 			return delegate.NewModelDelegate(t, u).Save()
 		}
@@ -509,10 +498,12 @@ func NewTaskSchedulerService(opts ...Option) (svc2 interfaces.TaskSchedulerServi
 		return nil, trace.TraceError(err)
 	}
 	if err := c.Invoke(func(
+		// nodeCfgSvc interfaces.NodeConfigService,
 		modelSvc service.ModelService,
 		svr interfaces.GrpcServer,
 		handlerSvc interfaces.TaskHandlerService,
 	) {
+		// svc.nodeCfgSvc = nodeCfgSvc
 		svc.modelSvc = modelSvc
 		svc.svr = svr
 		svc.handlerSvc = handlerSvc
@@ -568,7 +559,6 @@ func ProvideGetTaskSchedulerService(path string, opts ...Option) func() (svr int
 	if intervalSeconds > 0 {
 		opts = append(opts, WithInterval(time.Duration(intervalSeconds)*time.Second))
 	}
-
 	return func() (svr interfaces.TaskSchedulerService, err error) {
 		return GetTaskSchedulerService(path, opts...)
 	}

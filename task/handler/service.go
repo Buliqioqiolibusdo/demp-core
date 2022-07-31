@@ -37,10 +37,7 @@ type Service struct {
 	exitWatchDuration time.Duration
 	reportInterval    time.Duration
 	cancelTimeout     time.Duration
-<<<<<<< HEAD
 
-=======
->>>>>>> 62fc0f3319056a40965f943a4b758d86e7c001c3
 	// internals variables
 	stopped   bool
 	mu        sync.Mutex
@@ -95,6 +92,8 @@ func (svc *Service) Run(taskId primitive.ObjectID) (err error) {
 			default:
 				log.Errorf("task[%s] finished with unknown error: %v", r.GetTaskId().Hex(), err)
 			}
+			// delete runner from pool
+			svc.deleteRunner(r.GetTaskId())
 		}
 		log.Infof("task[%s] finished", r.GetTaskId().Hex())
 	}()
@@ -396,7 +395,6 @@ func NewTaskHandlerService(opts ...Option) (svc2 interfaces.TaskHandlerService, 
 	}); err != nil {
 		return nil, trace.TraceError(err)
 	}
-
 	log.Debugf("[NewTaskHandlerService] svc[cfgPath: %s]", svc.cfgSvc.GetConfigPath())
 
 	return svc, nil

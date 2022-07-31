@@ -9,10 +9,10 @@ const (
 	TaskStatusAbnormal  = "abnormal"
 )
 
-const (
-	TaskFinish = "finish"
-	TaskCancel = "cancel"
-)
+// const (
+// 	TaskFinish = "finish"
+// 	TaskCancel = "cancel"
+// )
 
 const (
 	RunTypeAllNodes      = "all-nodes"

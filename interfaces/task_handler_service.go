@@ -28,12 +28,12 @@ type TaskHandlerService interface {
 	SetExitWatchDuration(duration time.Duration)
 	// GetReportInterval get report interval
 	GetReportInterval() (interval time.Duration)
-	// SetReportInterval set report interval
-	SetReportInterval(interval time.Duration)
 	// GetCancelTimeout get report interval
 	GetCancelTimeout() (timeout time.Duration)
 	// SetCancelTimeout set report interval
 	SetCancelTimeout(timeout time.Duration)
+	// SetReportInterval set report interval
+	SetReportInterval(interval time.Duration)
 	// GetModelService get model service
 	GetModelService() (modelSvc GrpcClientModelService)
 	// GetModelSpiderService get model spider service

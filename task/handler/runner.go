@@ -170,9 +170,36 @@ func (r *Runner) Run() (err error) {
 	return err
 }
 
+// func (r *Runner) Cancel() (err error) {
+// 	// kill process
+// 	if err := sys_exec.KillProcessWithTimeout(r.cmd, r.svc.GetCancelTimeout()); err != nil {
+// 		return err
+// 	}
+
+// 	// make sure the process does not exist
+// 	op := func() error {
+// 		if exists, _ := process.PidExists(int32(r.pid)); exists {
+// 			return errors.ErrorTaskProcessStillExists
+// 		}
+// 		return nil
+// 	}
+// 	ctx, cancel := context.WithTimeout(context.Background(), r.svc.GetExitWatchDuration())
+// 	defer cancel()
+// 	b := backoff.WithContext(backoff.NewConstantBackOff(1*time.Second), ctx)
+// 	if err := backoff.Retry(op, b); err != nil {
+// 		return trace.TraceError(errors.ErrorTaskUnableToCancel)
+// 	}
+
+// 	return nil
+// }
+
 func (r *Runner) Cancel() (err error) {
 	// kill process
-	if err := sys_exec.KillProcessWithTimeout(r.cmd, r.svc.GetCancelTimeout()); err != nil {
+	opts := &sys_exec.KillProcessOptions{
+		Timeout: r.svc.GetCancelTimeout(),
+		Force:   false,
+	}
+	if err := sys_exec.KillProcess(r.cmd, opts); err != nil {
 		return err
 	}
 
