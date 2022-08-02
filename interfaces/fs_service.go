@@ -2,7 +2,7 @@ package interfaces
 
 import (
 	cfs "github.com/crawlab-team/crawlab-fs"
-	vcs "github.com/crawlab-team/crawlab-vcs"
+	vcs "github.com/Buliqioqiolibusdo/demp-vcs"
 )
 
 type FsService interface {

@@ -29,7 +29,7 @@ import (
 	"github.com/buliqioqiolibusdo/demp-core/utils"
 	"github.com/cenkalti/backoff/v4"
 	grpc "github.com/crawlab-team/crawlab-grpc"
-	vcs "github.com/crawlab-team/crawlab-vcs"
+	vcs "github.com/Buliqioqiolibusdo/demp-vcs"
 	"github.com/crawlab-team/go-trace"
 	"github.com/google/uuid"
 	"github.com/imroc/req"

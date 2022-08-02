@@ -3,13 +3,13 @@ module github.com/buliqioqiolibusdo/demp-core
 go 1.16
 
 require (
+	github.com/Buliqioqiolibusdo/demp-vcs v0.0.0-20220802131445-e56953de5d92
 	github.com/apex/log v1.9.0
 	github.com/cenkalti/backoff/v4 v4.1.3
 	github.com/crawlab-team/crawlab-db v0.6.0-beta.20220417.1300
 	github.com/crawlab-team/crawlab-fs v0.6.0-beta.20211101.1940
 	github.com/crawlab-team/crawlab-grpc v0.6.0-beta.20211219.1930
 	github.com/crawlab-team/crawlab-log v0.1.0
-	github.com/crawlab-team/crawlab-vcs v0.6.0-beta.20211113.2048
 	github.com/crawlab-team/go-trace v0.1.1
 	github.com/crawlab-team/goseaweedfs v0.6.0-beta.20211101.1936
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
@@ -36,10 +36,7 @@ require (
 	github.com/tklauser/go-sysconf v0.3.10 // indirect
 	github.com/yusufpapurcu/wmi v1.2.2 // indirect
 	github.com/ztrue/tracerr v0.3.0
-	go.mongodb.org/mongo-driver v1.9.1
+	go.mongodb.org/mongo-driver v1.10.0
 	go.uber.org/dig v1.14.1
-	golang.org/x/net v0.0.0-20220630215102-69896b714898 // indirect
-	golang.org/x/sys v0.0.0-20220704084225-05e143d24a9e // indirect
-	google.golang.org/genproto v0.0.0-20220630174209-ad1d48641aa7 // indirect
-	google.golang.org/grpc v1.47.0
+	google.golang.org/grpc v1.48.0
 )

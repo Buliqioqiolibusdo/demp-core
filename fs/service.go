@@ -9,7 +9,7 @@ import (
 	"github.com/buliqioqiolibusdo/demp-core/interfaces"
 	"github.com/buliqioqiolibusdo/demp-core/node/config"
 	cfs "github.com/crawlab-team/crawlab-fs"
-	vcs "github.com/crawlab-team/crawlab-vcs"
+	vcs "github.com/Buliqioqiolibusdo/demp-vcs"
 	"github.com/crawlab-team/go-trace"
 	"github.com/spf13/viper"
 	"github.com/ztrue/tracerr"

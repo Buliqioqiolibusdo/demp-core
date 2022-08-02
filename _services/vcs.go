@@ -1,6 +1,6 @@
 package services
 
-import vcs "github.com/crawlab-team/crawlab-vcs"
+import vcs "github.com/Buliqioqiolibusdo/demp-vcs"
 
 type VcsServiceInterface interface {
 	LocalClient() (c *vcs.Client, err error)

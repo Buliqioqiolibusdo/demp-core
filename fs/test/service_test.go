@@ -9,7 +9,7 @@ import (
 	"github.com/buliqioqiolibusdo/demp-core/errors"
 	"github.com/buliqioqiolibusdo/demp-core/fs"
 	"github.com/buliqioqiolibusdo/demp-core/interfaces"
-	vcs "github.com/crawlab-team/crawlab-vcs"
+	vcs "github.com/Buliqioqiolibusdo/demp-vcs"
 	"github.com/stretchr/testify/require"
 )
 

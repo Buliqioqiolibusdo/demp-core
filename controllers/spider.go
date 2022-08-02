@@ -21,7 +21,7 @@ import (
 	"github.com/buliqioqiolibusdo/demp-core/spider/sync"
 	"github.com/buliqioqiolibusdo/demp-core/utils"
 	"github.com/crawlab-team/crawlab-db/mongo"
-	vcs "github.com/crawlab-team/crawlab-vcs"
+	vcs "github.com/Buliqioqiolibusdo/demp-vcs"
 	"github.com/crawlab-team/go-trace"
 	"github.com/gin-gonic/gin"
 	"github.com/go-git/go-git/v5"
